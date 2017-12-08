@@ -9,8 +9,7 @@ class Board extends Component {
     this.convertBoard = this.convertBoard.bind(this);
     this.state = {
       currentBoard: '+++++++++',
-      // letters: [' ',' ',' ',' ',' ',' ',' ',' ',' ']
-      letters: [1,2,3,4,5,6,7,8,9],
+      letters: [' ',' ',' ',' ',' ',' ',' ',' ',' ']
     }
   }
   convertBoard(responseString) {
@@ -21,7 +20,9 @@ class Board extends Component {
     console.log('hi')
     console.log(event)
     this.props.playFunction()
-    this.setState( {letter: 'b' })
+    let array = this.state.letters
+    array[event.target.id - 1] = 'o'
+    this.setState( {letters: array })
   }
   createCell(num, value) {
     return <Cell num={num} key={num} letter={this.state.letters[num-1]} onClick={this.cellClick} />

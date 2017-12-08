@@ -8,10 +8,10 @@ class Cell extends Component {
       // letter: ' ',
     }
   }
-  onClick() {
-    if (this.state.letter = " ") {
-      this.setState({ letter: "K" });
-      this.props.onClick(this);
+  onClick(event) {
+    if (this.props.letter === " ") {
+      // this.setState({ letter: "K" });
+      this.props.onClick(event);
     }
   }
   render() {
