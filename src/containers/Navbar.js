@@ -1,10 +1,8 @@
 import React, {Component} from 'react'
-import logo from '../logo.svg';
+// import logo from '../logo.svg';
 
 class Navbar extends Component {
-  onClick () {
-    console.log('click')
-  }
+
   render(){
     return (
       <nav className='navbar'>

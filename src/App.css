@@ -91,4 +91,29 @@
 
 .col-md-8 {
   border: 1px solid red;
+  margin-left: 10px;
+}
+.col-md-2 {
+  border: 1px solid blue;
+}
+
+.cell {
+  background-color: white;
+  float: left;
+  width: 32%;
+  height: 32%;
+  border: 2px solid darkslategrey;
+  margin: 3px;
+  border-radius: 5px;
+}
+
+.board {
+  margin-right: auto;
+  width: 500px;
+  border: 2px solid darkslategrey;
+  height: 500px;
+  background: white;
+  float: none;
+  margin-left: auto;
+  margin-bottom: 150px;
 }

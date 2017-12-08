@@ -1,8 +1,29 @@
 import React, {Component} from 'react'
 import ScoreCard from './ScoreCard'
 import Board from './Board'
+import $ from 'jquery'
+
 
 class Game extends Component {
+  constructor() {
+    super();
+    this.play = this.play.bind(this)
+    this.state = {
+      currentPlayer: "user",
+      currentBoard: "+++++++++",
+    }
+  }
+
+  play(event) {
+    let board_param = this.state.currentBoard
+    $.ajax({
+      url:`https://eb-tic-tac-toe.herokuapp.com/?board=${board_param}`
+    }).done((response) => {
+      console.log(response)
+      // this.setState({currentBoard: response})
+    })
+  }
+
   render(){
     return(<div>
       <div className='page'>
@@ -11,7 +32,7 @@ class Game extends Component {
             <ScoreCard />
           </div>
           <div className='col-md-8'>
-            <Board />
+            <Board playFunction={this.play} />
           </div>
         </div>
       </div>
