@@ -6,13 +6,25 @@ class Board extends Component {
     super();
     this.createCell = this.createCell.bind(this);
     this.cellClick = this.cellClick.bind(this);
+    this.convertBoard = this.convertBoard.bind(this);
+    this.state = {
+      currentBoard: '+++++++++',
+      // letters: [' ',' ',' ',' ',' ',' ',' ',' ',' ']
+      letters: [1,2,3,4,5,6,7,8,9],
+    }
+  }
+  convertBoard(responseString) {
+    console.log("response string is" + responseString)
+    console.log(this.state.currentBoard)
   }
   cellClick(event) {
     console.log('hi')
-    this.createCell(event.target.id, 'K')
+    console.log(event)
+    this.props.playFunction()
+    this.setState( {letter: 'b' })
   }
   createCell(num, value) {
-    return <Cell num={num} key={num} value={value} onClick={this.cellClick} />
+    return <Cell num={num} key={num} letter={this.state.letters[num-1]} onClick={this.cellClick} />
   }
   render(){
     return(<div >
