@@ -2,14 +2,9 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 120px;
-}
-
 .App-header {
   background-color: black;
-  height: 220px;
+  height: 100px;
   padding: 20px;
   color: white;
 }
@@ -18,17 +13,8 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 .inline {
   display: inline;
-}
-
-.fade-out {
-  opacity: 0;
 }
 
 .brand {
@@ -36,44 +22,6 @@
   font-size: 20px;
 }
 
-.card {
-  margin: 0 auto;
-  text-align:center;
-}
-
-.card img {
-  width: 200px;
-}
-
-.top-padding {
-  padding-top: 20px;
-}
-
-.full-height {
-  height: 100%;
-}
-
-.content {
-  transition: 1s;
-}
-
-.contact-content {
-  text-align: left;
-}
-
-.loading {
-  width: 100%;
-}
-
-.projectCard {
-  display: inline-block;
-  width: 200px;
-  padding: 10px;
-}
-
-.projectIcon {
-  width: 100px;
-}
 
 /* Navbar Links */
 .nav-list {
