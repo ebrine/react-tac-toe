@@ -2,15 +2,9 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 120px;
-}
-
-.App-header {
+.navbar {
   background-color: black;
-  height: 220px;
-  padding: 20px;
+  height: 60px;
   color: white;
 }
 
@@ -18,17 +12,8 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 .inline {
   display: inline;
-}
-
-.fade-out {
-  opacity: 0;
 }
 
 .brand {
@@ -36,44 +21,6 @@
   font-size: 20px;
 }
 
-.card {
-  margin: 0 auto;
-  text-align:center;
-}
-
-.card img {
-  width: 200px;
-}
-
-.top-padding {
-  padding-top: 20px;
-}
-
-.full-height {
-  height: 100%;
-}
-
-.content {
-  transition: 1s;
-}
-
-.contact-content {
-  text-align: left;
-}
-
-.loading {
-  width: 100%;
-}
-
-.projectCard {
-  display: inline-block;
-  width: 200px;
-  padding: 10px;
-}
-
-.projectIcon {
-  width: 100px;
-}
 
 /* Navbar Links */
 .nav-list {
@@ -90,29 +37,30 @@
 }
 
 .col-md-8 {
-  border: 1px solid red;
+  /*border: 1px solid red;*/
   margin-left: 10px;
 }
 .col-md-2 {
-  border: 1px solid blue;
+  /*border: 1px solid blue;*/
 }
 
 .cell {
-  background-color: white;
+  background-color: #BFABCB;
   float: left;
-  width: 32%;
-  height: 32%;
+  width: 30%;
+  height: 30%;
   border: 2px solid darkslategrey;
-  margin: 3px;
+  margin: 5px;
   border-radius: 5px;
 }
 
 .board {
   margin-right: auto;
   width: 500px;
-  border: 2px solid darkslategrey;
+
+  /*border: 2px solid darkslategrey;*/
   height: 500px;
-  background: white;
+  /*background: pink;*/
   float: none;
   margin-left: auto;
   margin-bottom: 150px;
