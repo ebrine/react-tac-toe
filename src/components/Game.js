@@ -7,22 +7,23 @@ import $ from 'jquery'
 class Game extends Component {
   constructor() {
     super();
-    this.play = this.play.bind(this)
+    // this.play = this.play.bind(this)
     this.state = {
       currentPlayer: "user",
       currentBoard: "+++++++++",
     }
   }
-
-  play(event) {
-    let board_param = this.state.currentBoard
-    $.ajax({
-      url:`https://eb-tic-tac-toe.herokuapp.com/?board=${board_param}`
-    }).done((response) => {
-      console.log(response)
-      // this.setState({currentBoard: response})
-    })
-  }
+  //
+  // play(event) {
+  //   let board_param = this.state.currentBoard
+  //   $.ajax({
+  //     url:`https://eb-tic-tac-toe.herokuapp.com/?board=${board_param}`
+  //   }).done((response) => {
+  //     console.log(response)
+  //     // this.setState({currentBoard: response})
+  //     return response
+  //   })
+  // }
 
   render(){
     return(<div>
