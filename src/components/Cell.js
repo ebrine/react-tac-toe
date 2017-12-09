@@ -5,12 +5,10 @@ class Cell extends Component {
     super();
     this.onClick = this.onClick.bind(this);
     this.state = {
-      // letter: ' ',
     }
   }
   onClick(event) {
-    if (this.props.letter === " ") {
-      // this.setState({ letter: "K" });
+    if (this.props.letter === " " && this.props.canMove) {
       this.props.onClick(event);
     }
   }
