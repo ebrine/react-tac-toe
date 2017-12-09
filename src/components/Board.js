@@ -53,7 +53,6 @@ class Board extends Component {
   }
   render(){
     return(<div >
-      <h1>Board</h1>
       <h1 style={{display: this.state.winner ? 'block' : 'none' }}>{this.state.winner} is the winner</h1>
       <div className="board">
       {[1,2,3,4,5,6,7,8,9].map((num) => this.createCell(num))}

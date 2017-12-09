@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import $ from 'jquery'
 
 class Cell extends Component {
   constructor() {
@@ -10,6 +11,7 @@ class Cell extends Component {
   onClick(event) {
     if (this.props.letter === " " && this.props.canMove) {
       this.props.onClick(event);
+      $(`#${event.target.id}`).css('color', 'red')
     }
   }
   render() {
