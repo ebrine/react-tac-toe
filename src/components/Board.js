@@ -25,10 +25,7 @@ class Board extends Component {
       setTimeout(() => {
         this.setState({loading: false});
         console.log("hi");
-        }, 5000);
-      // this.setState({
-      //   loading: false
-      // });
+      }, 5000);
     })
     .catch(error => {
       console.log(error);
@@ -73,7 +70,17 @@ class Board extends Component {
   render(){
     if (this.state.loading) {
       return(
-        <div className="loader"></div>
+        <div className="board">
+        <div className='loadingcell'></div>
+        <div className='loadingcell'></div>
+        <div className='loadingcell'></div>
+        <div className='loadingcell'></div>
+        <div className='loadingcell'></div>
+        <div className='loadingcell'></div>
+        <div className='loadingcell'></div>
+        <div className='loadingcell'></div>
+        <div className='loadingcell'></div>
+        </div>
       )
     } else {
     return(<div >
