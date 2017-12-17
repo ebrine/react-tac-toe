@@ -13,7 +13,21 @@ class Board extends Component {
     this.state = {
       winner: false,
       letters: [' ',' ',' ',' ',' ',' ',' ',' ',' '],
+      loading: true,
     }
+  }
+
+  componentDidMount() {
+    $.ajax({
+      url: 'https://eb-tic-tac-toe.herokuapp.com/?board=xxx+++ooo'
+    }).then((response) => {
+      setTimeout(() => {
+        this.setState({loading: false});
+      }, 3000);
+    })
+    .catch(error => {
+      console.log(error);
+    })
   }
 
   play() {
@@ -52,12 +66,28 @@ class Board extends Component {
     return <Cell num={num} key={num} canMove={!this.state.winner} letter={this.state.letters[num-1]} onClick={this.cellClick} />
   }
   render(){
+    if (this.state.loading) {
+      return(
+        <div className="board">
+        <div className='loadingcell'></div>
+        <div className='loadingcell'></div>
+        <div className='loadingcell'></div>
+        <div className='loadingcell'></div>
+        <div className='loadingcell'></div>
+        <div className='loadingcell'></div>
+        <div className='loadingcell'></div>
+        <div className='loadingcell'></div>
+        <div className='loadingcell'></div>
+        </div>
+      )
+    } else {
     return(<div >
       <h1 style={{display: this.state.winner ? 'block' : 'none' }}>{this.state.winner} is the winner</h1>
       <div className="board">
       {[1,2,3,4,5,6,7,8,9].map((num) => this.createCell(num))}
       </div>
       </div>)
+    }
   }
 }
 
