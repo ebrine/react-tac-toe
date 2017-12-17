@@ -21,10 +21,8 @@ class Board extends Component {
     $.ajax({
       url: 'https://eb-tic-tac-toe.herokuapp.com/?board=xxx+++ooo'
     }).then((response) => {
-      console.log('loaded');
       setTimeout(() => {
         this.setState({loading: false});
-        console.log("hi");
       }, 3000);
     })
     .catch(error => {
