@@ -25,7 +25,7 @@ class Board extends Component {
       setTimeout(() => {
         this.setState({loading: false});
         console.log("hi");
-      }, 5000);
+      }, 3000);
     })
     .catch(error => {
       console.log(error);
