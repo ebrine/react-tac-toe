@@ -20,6 +20,8 @@
 
 .App {
   text-align: center;
+  background-color: #F3F3EB;
+  /* opacity: 60%; */
 }
 
 .navbar {
@@ -65,11 +67,11 @@
 }
 
 .cell {
-  background-color: #BFABCB;
+  background-color: #B4A7AF;
   float: left;
   width: 30%;
   height: 30%;
-  border: 2px solid darkslategrey;
+  /* border: 2px solid #A8AEAF; */
   margin: 5px;
   border-radius: 5px;
 }

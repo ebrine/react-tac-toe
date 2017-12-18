@@ -17,13 +17,13 @@ class Cell extends Component {
   }
   getColor() {
     if (this.props.letter === ' ') {
-      return '#BFABCB'
+      return '#B4A7AF'
     }
     else if (this.props.letter === 'x') {
-      return '#EAC8CA'
+      return '#BECBCD'
     }
     else if (this.props.letter === 'o') {
-      return '#8D89A6'
+      return '#96AA8F'
     }
   }
 
