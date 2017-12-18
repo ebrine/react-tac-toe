@@ -1,18 +1,19 @@
 import React, {Component} from 'react'
 import Cell from './Cell'
+import Banner from './Banner'
 import $ from 'jquery'
 
 
 class Board extends Component {
   constructor() {
     super();
+    this.resetBoard = this.resetBoard.bind(this);
     this.createCell = this.createCell.bind(this);
     this.createLoadingCell = this.createLoadingCell.bind(this);
     this.cellClick = this.cellClick.bind(this);
     this.play = this.play.bind(this)
     this.checkWinner = this.checkWinner.bind(this)
     this.state = {
-      winner: false,
       letters: [' ',' ',' ',' ',' ',' ',' ',' ',' '],
       loading: true,
     }
@@ -37,7 +38,7 @@ class Board extends Component {
       url:`https://eb-tic-tac-toe.herokuapp.com/?board=${board_param}`
     }).done((response) => {
       if (response === 'x' || response === 'o') {
-        this.setState({ winner: response })
+        this.props.declareWinner(response)
       }
       else {
         this.setState({letters: response.split('')})
@@ -52,7 +53,7 @@ class Board extends Component {
       url: `https://eb-tic-tac-toe.herokuapp.com/winner?board=${board_param}`
     }).done((response) => {
       if (response === 'x' || response === 'o') {
-        this.setState({ winner: response })
+        this.props.declareWinner(response)
       }
     })
   }
@@ -65,12 +66,18 @@ class Board extends Component {
   }
 
   createCell(num) {
-    return <Cell num={num} key={num} canMove={!this.state.winner} letter={this.state.letters[num-1]} onClick={this.cellClick} />
+    return <Cell num={num} key={num} canMove={!this.props.isWon} letter={this.state.letters[num-1]} onClick={this.cellClick} />
   }
 
   createLoadingCell() {
     return  <div className='loadingcell'></div>
   }
+
+  resetBoard() {
+    this.setState({letters: [' ',' ',' ',' ',' ',' ',' ',' ',' ']});
+    this.props.resetBoard();
+  }
+
   
   render(){
     if (this.state.loading) {
@@ -81,7 +88,7 @@ class Board extends Component {
       )
     } else {
     return(<div >
-      <h1 style={{display: this.state.winner ? 'block' : 'none' }}>{this.state.winner} is the winner</h1>
+      <Banner winner={this.props.winner} resetBoard={this.resetBoard}/>
       <div className="board">
       {[1,2,3,4,5,6,7,8,9].map((num) => this.createCell(num))}
       </div>
