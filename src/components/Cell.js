@@ -18,27 +18,27 @@ class Cell extends Component {
   }
   getColor() {
     if (this.props.letter === ' ') {
-      return '#B4A7AF'
+      return '#DBB1BC'
     }
     else if (this.props.letter === 'x') {
-      return '#BECBCD'
+      return '#FF5E5B'
     }
     else if (this.props.letter === 'o') {
-      return '#96AA8F'
+      return '#B8DBD9'
     }
   }
 
   mouseEnter(event) {
     if (this.props.letter === " "){
       console.log(event.target.id)
-      $(`#${event.target.id}`).css('background-color', '#90858C')
+      $(`#${event.target.id}`).css('background-color', '#cb8e9e')
     }
   }
 
   mouseLeave(event) {
     if (this.props.letter === " "){
       console.log(event.target.id)
-      $(`#${event.target.id}`).css('background-color', '#B4A7AF')
+      $(`#${event.target.id}`).css('background-color', '#DBB1BC')
     }
   }
 

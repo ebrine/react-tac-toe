@@ -1,6 +1,36 @@
 h1 {
   margin: 0;
 }
+.bannertext {
+  font-size: 24px;
+  margin-top: 20px;
+}
+.banner {
+    margin: auto;
+    margin-bottom: 30px;
+    height: 130px;
+    width: 400px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.reset {
+  border-radius: 5px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  background: #E93C75;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  width: 130px;
+  margin: auto;
+}
+
+.reset:hover {
+  background: #e30b52;
+  text-decoration: none;
+}
 .loadingcell {
         -moz-animation:bounce 3s linear;
         -webkit-animation:bounce 3s linear;
@@ -23,7 +53,6 @@ h1 {
 .App {
   text-align: center;
   background-color: #F3F3EB;
-  /* opacity: 60%; */
 }
 
 .navbar {
@@ -69,11 +98,10 @@ h1 {
 }
 
 .cell {
-  background-color: #B4A7AF;
+  background-color: #DBB1BC;
   float: left;
   width: 30%;
   height: 30%;
-  /* border: 2px solid #A8AEAF; */
   margin: 5px;
   border-radius: 5px;
   display: flex;
@@ -81,14 +109,12 @@ h1 {
   align-items: center;
 }
 
-
-
 .loadingcell {
-  background-color: #3C244A;
+  background-color: #C37D8F;
   float: left;
   width: 30%;
   height: 30%;
-  border: 2px solid #3C244A;
+  border: 2px solid #C37D8F;
   margin: 5px;
   border-radius: 5px;
 }
@@ -96,10 +122,7 @@ h1 {
 .board {
   margin-right: auto;
   width: 500px;
-
-  /*border: 2px solid darkslategrey;*/
   height: 500px;
-  /*background: pink;*/
   float: none;
   margin-left: auto;
   margin-bottom: 150px;
