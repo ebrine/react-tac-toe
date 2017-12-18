@@ -12,7 +12,6 @@ class Board extends Component {
     this.play = this.play.bind(this)
     this.checkWinner = this.checkWinner.bind(this)
     this.state = {
-      winner: false,
       letters: [' ',' ',' ',' ',' ',' ',' ',' ',' '],
       loading: true,
     }
@@ -37,7 +36,6 @@ class Board extends Component {
       url:`https://eb-tic-tac-toe.herokuapp.com/?board=${board_param}`
     }).done((response) => {
       if (response === 'x' || response === 'o') {
-        this.setState({winner: response})
         this.props.declareWinner(response)
       }
       else {
@@ -53,7 +51,6 @@ class Board extends Component {
       url: `https://eb-tic-tac-toe.herokuapp.com/winner?board=${board_param}`
     }).done((response) => {
       if (response === 'x' || response === 'o') {
-        this.setState({ winner: response })
         this.props.declareWinner(response)
       }
     })
@@ -83,7 +80,6 @@ class Board extends Component {
       )
     } else {
     return(<div >
-      <h1 style={{display: this.state.winner ? 'block' : 'none' }}>{this.state.winner} is the winner</h1>
       <div className="board">
       {[1,2,3,4,5,6,7,8,9].map((num) => this.createCell(num))}
       </div>
