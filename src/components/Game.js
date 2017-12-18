@@ -20,7 +20,6 @@ class Game extends Component {
     } else if (winner === 'x') {
       this.setState({yourScore: this.state.yourScore += 1})
     }
-    console.log(`winner declared: ${this.state.winner}`)
   }
 
   render(){
