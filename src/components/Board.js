@@ -1,11 +1,13 @@
 import React, {Component} from 'react'
 import Cell from './Cell'
+import Banner from './Banner'
 import $ from 'jquery'
 
 
 class Board extends Component {
   constructor() {
     super();
+    this.resetBoard = this.resetBoard.bind(this);
     this.createCell = this.createCell.bind(this);
     this.createLoadingCell = this.createLoadingCell.bind(this);
     this.cellClick = this.cellClick.bind(this);
@@ -71,6 +73,10 @@ class Board extends Component {
     return  <div className='loadingcell'></div>
   }
 
+  resetBoard() {
+    this.setState({letters: [' ',' ',' ',' ',' ',' ',' ',' ',' ']});
+    this.props.resetBoard();
+  }
   render(){
     if (this.state.loading) {
       return(
@@ -80,6 +86,7 @@ class Board extends Component {
       )
     } else {
     return(<div >
+      <Banner winner={this.props.winner} resetBoard={this.resetBoard}/>
       <div className="board">
       {[1,2,3,4,5,6,7,8,9].map((num) => this.createCell(num))}
       </div>

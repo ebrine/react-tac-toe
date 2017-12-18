@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import ScoreCard from './ScoreCard'
 import Board from './Board'
-import Banner from './Banner'
 import $ from 'jquery'
 
 
@@ -40,8 +39,7 @@ class Game extends Component {
             <ScoreCard yourScore={this.state.yourScore} computerScore={this.state.computerScore}/>
           </div>
           <div className='col-md-8'>
-            <Banner winner={this.state.winner} resetBoard={this.resetBoard}/>
-            <Board winner={this.state.winner} declareWinner={this.declareWinner} />
+            <Board resetBoard={this.resetBoard} winner={this.state.winner} declareWinner={this.declareWinner} />
           </div>
         </div>
       </div>
