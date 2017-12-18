@@ -63,12 +63,15 @@ class Board extends Component {
     this.setState( {letters: array })
     this.play()
   }
+
   createCell(num) {
     return <Cell num={num} key={num} canMove={!this.state.winner} letter={this.state.letters[num-1]} onClick={this.cellClick} />
   }
+
   createLoadingCell() {
     return  <div className='loadingcell'></div>
   }
+  
   render(){
     if (this.state.loading) {
       return(

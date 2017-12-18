@@ -4,6 +4,8 @@ import $ from 'jquery'
 class Cell extends Component {
   constructor() {
     super();
+    this.mouseEnter = this.mouseEnter.bind(this);
+    this.mouseLeave = this.mouseLeave.bind(this);
     this.getColor = this.getColor.bind(this);
     this.onClick = this.onClick.bind(this);
     this.state = {
@@ -26,9 +28,23 @@ class Cell extends Component {
     }
   }
 
+  mouseEnter(event) {
+    if (this.props.letter === " "){
+      console.log(event.target.id)
+      $(`#${event.target.id}`).css('background-color', '#90858C')
+    }
+  }
+
+  mouseLeave(event) {
+    if (this.props.letter === " "){
+      console.log(event.target.id)
+      $(`#${event.target.id}`).css('background-color', '#B4A7AF')
+    }
+  }
+
   render() {
     return (
-      <div className="cell" id={this.props.num} onClick={this.onClick}
+      <div className="cell" id={this.props.num} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave} onClick={this.onClick}
       style={{backgroundColor: this.getColor()}}>
       <h1>{this.props.letter}</h1>
       </div>
