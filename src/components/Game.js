@@ -5,15 +5,41 @@ import $ from 'jquery'
 
 
 class Game extends Component {
+  constructor() {
+    super();
+    this.resetBoard = this.resetBoard.bind(this);
+    this.declareWinner = this.declareWinner.bind(this);
+    this.state = {
+      winner: false,
+      yourScore: 0,
+      computerScore: 0,
+    }
+  }
+
+  resetBoard() {
+    console.log("Rst board clicked")
+    this.setState({winner: false})
+  }
+
+  declareWinner(winner) {
+    if (winner === 'o') {
+      this.setState({winner: 'Computer'})
+      this.setState({computerScore: this.state.computerScore += 1})
+    } else if (winner === 'x') {
+      this.setState({winner: 'You'})
+      this.setState({yourScore: this.state.yourScore += 1})
+    }
+  }
 
   render(){
     return(<div>
       <div className='page'>
         <div className='container-fluid top-padding'>
           <div className='col-md-2'>
+            <ScoreCard yourScore={this.state.yourScore} computerScore={this.state.computerScore}/>
           </div>
           <div className='col-md-8'>
-            <Board playFunction={this.play} />
+            <Board resetBoard={this.resetBoard} winner={this.state.winner} declareWinner={this.declareWinner} />
           </div>
         </div>
       </div>

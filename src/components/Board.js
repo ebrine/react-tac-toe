@@ -77,8 +77,11 @@ class Board extends Component {
     this.setState({letters: [' ',' ',' ',' ',' ',' ',' ',' ',' ']});
     this.props.resetBoard();
   }
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> 873660c393b508ac2d3c3fcb9a1100677c8f3f1e
   render(){
     if (this.state.loading) {
       return(
