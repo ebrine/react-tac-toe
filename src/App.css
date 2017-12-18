@@ -23,7 +23,6 @@ h1 {
 .App {
   text-align: center;
   background-color: #F3F3EB;
-  /* opacity: 60%; */
 }
 
 .navbar {
@@ -69,7 +68,7 @@ h1 {
 }
 
 .cell {
-  background-color: #B4A7AF;
+  background-color: #DBB1BC;
   float: left;
   width: 30%;
   height: 30%;
@@ -84,11 +83,11 @@ h1 {
 
 
 .loadingcell {
-  background-color: #3C244A;
+  background-color: #C37D8F;
   float: left;
   width: 30%;
   height: 30%;
-  border: 2px solid #3C244A;
+  border: 2px solid #C37D8F;
   margin: 5px;
   border-radius: 5px;
 }
@@ -96,10 +95,8 @@ h1 {
 .board {
   margin-right: auto;
   width: 500px;
-
   /*border: 2px solid darkslategrey;*/
   height: 500px;
-  /*background: pink;*/
   float: none;
   margin-left: auto;
   margin-bottom: 150px;

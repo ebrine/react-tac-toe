@@ -37,7 +37,8 @@ class Board extends Component {
       url:`https://eb-tic-tac-toe.herokuapp.com/?board=${board_param}`
     }).done((response) => {
       if (response === 'x' || response === 'o') {
-        this.setState({ winner: response })
+        this.setState({winner: response})
+        this.props.declareWinner(response)
       }
       else {
         this.setState({letters: response.split('')})
@@ -53,6 +54,7 @@ class Board extends Component {
     }).done((response) => {
       if (response === 'x' || response === 'o') {
         this.setState({ winner: response })
+        this.props.declareWinner(response)
       }
     })
   }
@@ -71,7 +73,7 @@ class Board extends Component {
   createLoadingCell() {
     return  <div className='loadingcell'></div>
   }
-  
+
   render(){
     if (this.state.loading) {
       return(
