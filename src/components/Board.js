@@ -45,17 +45,25 @@ class Board extends Component {
         this.checkWinner()
       }
     })
+    .catch(error => {
+      this.checkWinner()
+    })
   }
 
   checkWinner() {
-    let board_param = this.state.letters.join('').replace(/\s/g, "+")
-    $.ajax({
-      url: `https://eb-tic-tac-toe.herokuapp.com/winner?board=${board_param}`
-    }).done((response) => {
-      if (response === 'x' || response === 'o') {
-        this.props.declareWinner(response)
-      }
-    })
+    if (this.state.letters.includes(' ') === false) {
+      this.props.declareWinner("tie")
+    }
+    else {
+      let board_param = this.state.letters.join('').replace(/\s/g, "+")
+      $.ajax({
+        url: `https://eb-tic-tac-toe.herokuapp.com/winner?board=${board_param}`
+      }).done((response) => {
+        if (response === 'x' || response === 'o') {
+          this.props.declareWinner(response)
+        }
+      })
+    }
   }
 
   cellClick(event) {
@@ -70,18 +78,14 @@ class Board extends Component {
   }
 
   createLoadingCell() {
-    return  <div className='loadingcell'></div>
+    return <div className='loadingcell'></div>
   }
 
   resetBoard() {
     this.setState({letters: [' ',' ',' ',' ',' ',' ',' ',' ',' ']});
     this.props.resetBoard();
   }
-<<<<<<< HEAD
 
-  
-=======
->>>>>>> 873660c393b508ac2d3c3fcb9a1100677c8f3f1e
   render(){
     if (this.state.loading) {
       return(
@@ -90,7 +94,7 @@ class Board extends Component {
         </div>
       )
     } else {
-    return(<div >
+    return(<div>
       <Banner winner={this.props.winner} resetBoard={this.resetBoard}/>
       <div className="board">
       {[1,2,3,4,5,6,7,8,9].map((num) => this.createCell(num))}
