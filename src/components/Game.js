@@ -28,6 +28,8 @@ class Game extends Component {
     } else if (winner === 'x') {
       this.setState({winner: 'You'})
       this.setState({yourScore: this.state.yourScore += 1})
+    } else if (winner === 'tie') {
+      this.setState({winner: 'Tie'})
     }
   }
 
