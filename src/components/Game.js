@@ -8,19 +8,26 @@ import $ from 'jquery'
 class Game extends Component {
   constructor() {
     super();
+    this.resetBoard = this.resetBoard.bind(this);
     this.declareWinner = this.declareWinner.bind(this);
     this.state = {
-      isWon: false,
+      winner: false,
       yourScore: 0,
       computerScore: 0,
     }
   }
 
+  resetBoard() {
+    console.log("Rst board clicked")
+    this.setState({winner: false})
+  }
+
   declareWinner(winner) {
-    this.setState({isWon: true})
     if (winner === 'o') {
+      this.setState({winner: 'Computer'})
       this.setState({computerScore: this.state.computerScore += 1})
     } else if (winner === 'x') {
+      this.setState({winner: 'You'})
       this.setState({yourScore: this.state.yourScore += 1})
     }
   }
@@ -33,8 +40,8 @@ class Game extends Component {
             <ScoreCard yourScore={this.state.yourScore} computerScore={this.state.computerScore}/>
           </div>
           <div className='col-md-8'>
-            <Banner show={this.state.isWon} resetBoard={this.resetBoard}/>
-            <Board isWon={this.state.isWon} declareWinner={this.declareWinner} />
+            <Banner winner={this.state.winner} resetBoard={this.resetBoard}/>
+            <Board winner={this.state.winner} declareWinner={this.declareWinner} />
           </div>
         </div>
       </div>
