@@ -34,7 +34,7 @@ class Game extends Component {
           </div>
           <div className='col-md-8'>
             <Banner show={this.state.isWon} resetBoard={this.resetBoard}/>
-            <Board declareWinner={this.declareWinner} />
+            <Board isWon={this.state.isWon} declareWinner={this.declareWinner} />
           </div>
         </div>
       </div>

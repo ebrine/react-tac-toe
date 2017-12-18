@@ -64,7 +64,7 @@ class Board extends Component {
   }
 
   createCell(num) {
-    return <Cell num={num} key={num} canMove={!this.state.winner} letter={this.state.letters[num-1]} onClick={this.cellClick} />
+    return <Cell num={num} key={num} canMove={!this.props.isWon} letter={this.state.letters[num-1]} onClick={this.cellClick} />
   }
 
   createLoadingCell() {
