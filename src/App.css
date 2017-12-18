@@ -72,15 +72,12 @@ h1 {
   float: left;
   width: 30%;
   height: 30%;
-  /* border: 2px solid #A8AEAF; */
   margin: 5px;
   border-radius: 5px;
   display: flex;
   justify-content: center; /* align horizontal */
   align-items: center;
 }
-
-
 
 .loadingcell {
   background-color: #C37D8F;
@@ -95,7 +92,6 @@ h1 {
 .board {
   margin-right: auto;
   width: 500px;
-  /*border: 2px solid darkslategrey;*/
   height: 500px;
   float: none;
   margin-left: auto;
