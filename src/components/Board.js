@@ -7,6 +7,7 @@ class Board extends Component {
   constructor() {
     super();
     this.createCell = this.createCell.bind(this);
+    this.createLoadingCell = this.createLoadingCell.bind(this);
     this.cellClick = this.cellClick.bind(this);
     this.play = this.play.bind(this)
     this.checkWinner = this.checkWinner.bind(this)
@@ -65,19 +66,14 @@ class Board extends Component {
   createCell(num) {
     return <Cell num={num} key={num} canMove={!this.state.winner} letter={this.state.letters[num-1]} onClick={this.cellClick} />
   }
+  createLoadingCell() {
+    return  <div className='loadingcell'></div>
+  }
   render(){
     if (this.state.loading) {
       return(
         <div className="board">
-        <div className='loadingcell'></div>
-        <div className='loadingcell'></div>
-        <div className='loadingcell'></div>
-        <div className='loadingcell'></div>
-        <div className='loadingcell'></div>
-        <div className='loadingcell'></div>
-        <div className='loadingcell'></div>
-        <div className='loadingcell'></div>
-        <div className='loadingcell'></div>
+        {[1,2,3,4,5,6,7,8,9].map(() => this.createLoadingCell())}
         </div>
       )
     } else {

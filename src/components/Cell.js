@@ -12,7 +12,6 @@ class Cell extends Component {
   onClick(event) {
     if (this.props.letter === " " && this.props.canMove) {
       this.props.onClick(event);
-      // $(`#${event.target.id}`).css('background-color', '#EAC8CA')
     }
   }
   getColor() {
